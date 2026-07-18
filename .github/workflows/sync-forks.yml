@@ -43,7 +43,7 @@ jobs:
           
           for FORK in $FORKS; do
             echo "Syncing $FORK..."
-            if gh repo sync "$FORK" --force; then
+            if gh repo sync "$FORK" --force 2>&1; then
               echo "✓ Successfully synced $FORK"
               ((SYNCED++))
             else
